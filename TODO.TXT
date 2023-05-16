@@ -1,0 +1,3 @@
+@TODO Skriva kommentarer om koden, lägga in try / catches och lägga in logback.
+@TODO Lägga in några mer assertTrue or assertEquals.
+
