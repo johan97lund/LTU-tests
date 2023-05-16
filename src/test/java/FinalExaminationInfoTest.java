@@ -31,12 +31,12 @@ public class FinalExaminationInfoTest implements TestSetup {
         loginWithKronoxCredentials();
 
 
-        }
+    }
 
 
-        // Verify that the web page has the correct information
-        //$("").shouldHave(Condition.text("Aktuellt"));
-        // Add more assertions or verifications as needed
+    // Verify that the web page has the correct information
+    //$("").shouldHave(Condition.text("Aktuellt"));
+    // Add more assertions or verifications as needed
 
 
     private void loginWithKronoxCredentials() throws InterruptedException {

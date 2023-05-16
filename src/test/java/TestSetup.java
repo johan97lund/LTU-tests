@@ -35,7 +35,7 @@ public interface TestSetup {
         loginToWebsite();
     }
 
-     default void loginToWebsite() throws IOException, InterruptedException {
+    default void loginToWebsite() throws IOException, InterruptedException {
         String password = null;
         String username = null;
 
