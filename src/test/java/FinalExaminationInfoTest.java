@@ -13,14 +13,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class FinalExaminationInfoTest implements TestSetup {
 
-    static Logger logger = LoggerFactory.getLogger(FinalExaminationInfoTest.class);
 
-    @BeforeAll
-    public static void setup() {
-        browser = "chrome";
-        browserSize = "maximized";
-        // Add any other desired Selenide configurations
-    }
 
     @Test
     public void testFinalExaminationInformation() throws InterruptedException {
@@ -33,10 +26,34 @@ public class FinalExaminationInfoTest implements TestSetup {
         Selenide.switchTo().window(1);
         Thread.sleep(1000);
         Selenide.$("#topnav > a.signin").click();
-        Thread.sleep(2000);
+        Thread.sleep(2000000000);
+
+        loginWithKronoxCredentials();
+
+
+        }
+
+
         // Verify that the web page has the correct information
         //$("").shouldHave(Condition.text("Aktuellt"));
         // Add more assertions or verifications as needed
+
+
+    private void loginWithKronoxCredentials() throws InterruptedException {
+        String kronoxUsername = "kronoxUsername";
+        String kronoxPassword = "kronoxPassword";
+
+        loginToWebsite(kronoxUsername, kronoxPassword);
+    }
+
+    private void loginToWebsite(String kronoxUsername, String kronoxPassword) throws InterruptedException {
+        SelenideElement userID = $("#username");
+        userID.setValue(kronoxUsername);
+        Thread.sleep(1000);
+
+        SelenideElement passID = $("#password");
+        passID.setValue(kronoxPassword);
+        Thread.sleep(1000);
     }
 
     // Helper method to read credentials from file
