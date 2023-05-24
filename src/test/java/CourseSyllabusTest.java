@@ -5,7 +5,11 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 
 import static com.codeborne.selenide.Selenide.$;
-
+/**
+ * @author Johan Lund, Jesper Truedsson, Mattias Fridsén
+ * @project LTU-tests
+ * @date 2023-05-10
+ */
 public class CourseSyllabusTest implements TestSetup {
 
     @Test

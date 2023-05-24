@@ -12,6 +12,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.codeborne.selenide.Selenide.$;
+/**
+ * @author Johan Lund, Jesper Truedsson, Mattias Fridsén
+ * @project LTU-tests
+ * @date 2023-05-10
+ */
 
 public class TranscriptDownloadTest implements TestSetup {
 
@@ -20,8 +25,8 @@ public class TranscriptDownloadTest implements TestSetup {
     @Test
     public void testTranscriptCreation() throws InterruptedException {
         try {
-            Configuration.downloadsFolder = "/Users/johanlund/Library/Mobile Documents/com~apple~CloudDocs/Downloads/LTUdownloads";
-            Configuration.reportsFolder = "/Users/johanlund/Library/Mobile Documents/com~apple~CloudDocs/Downloads/LTUdownloads";
+            Configuration.downloadsFolder = "/Users/johanlund/IdeaProjects/LTU-tests/LTUdownloads";
+            Configuration.reportsFolder = "/Users/johanlund/IdeaProjects/LTU-tests/LTUdownloads";
 
             // Click on the menu "Intyg", which will direct us to Ladok.
             Selenide.$x("/html/body/div/div[1]/div[4]/div[1]/div[2]/div[2]/ul[2]/li[4]/a").click();

@@ -11,6 +11,12 @@ import java.util.regex.Pattern;
 
 import static com.codeborne.selenide.Selenide.$;
 
+/**
+ * @author Johan Lund, Jesper Truedsson, Mattias Fridsén
+ * @project LTU-tests
+ * @date 2023-05-10
+ */
+
 public class TranscriptCreationTest implements TestSetup {
 
     private static final Logger logger = LoggerFactory.getLogger(TranscriptDownloadTest.class);

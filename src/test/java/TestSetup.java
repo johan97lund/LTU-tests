@@ -3,17 +3,26 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
+import static org.apache.commons.io.FileUtils.deleteDirectory;
+
+/**
+ * @author Johan Lund, Jesper Truedsson, Mattias Fridsén
+ * @project LTU-tests
+ * @date 2023-05-10
+ */
 
 public interface TestSetup {
 
@@ -23,6 +32,7 @@ public interface TestSetup {
     static void beforeAllTest() {
         Configuration.browserSize = null; // Disable Selenide's browserSize setting
         Configuration.browser = "chrome";
+        Configuration.downloadsFolder = "/Users/johanlund/IdeaProjects/LTU-tests/LTUdownloads";
 
         // Added Selenium configurations to make the web browser maximized.
         ChromeOptions options = new ChromeOptions();
@@ -95,4 +105,10 @@ public interface TestSetup {
         $("#fm1 > section.row.btn-row > input.btn-submit").click();
         Thread.sleep(2000);
     }
-}
+
+    @AfterAll
+    static void afterAll() {
+        System.out.println("The test passed!");
+    }
+
+        }

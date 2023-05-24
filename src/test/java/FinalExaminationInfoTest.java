@@ -1,4 +1,5 @@
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Screenshots;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.google.gson.Gson;
@@ -7,12 +8,20 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 import static com.codeborne.selenide.Selenide.$;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * @author Johan Lund, Jesper Truedsson, Mattias Fridsén
+ * @project LTU-tests
+ * @date 2023-05-10
+ */
 public class FinalExaminationInfoTest implements TestSetup {
 
     private static final Logger logger = LoggerFactory.getLogger(FinalExaminationInfoTest.class);
@@ -81,6 +90,18 @@ public class FinalExaminationInfoTest implements TestSetup {
             // Handle InterruptedException
             logger.error("InterruptedException occurred.", e);
             throw e;
+        }
+        File screenshotFile = Screenshots.takeScreenShotAsFile();
+
+        String destinationPath = "/Users/johanlund/IdeaProjects/LTU-tests/LTUdownloads/fianl_examination.png";
+
+        try {
+
+            assert screenshotFile != null;
+            Files.move(screenshotFile.toPath(), new File(destinationPath).toPath(), StandardCopyOption.REPLACE_EXISTING);
+            System.out.println("Screenshot saved successfully at:" + destinationPath);
+        } catch (IOException e) {
+            System.out.println("Failed to save the screenshot:" + e.getMessage());
         }
     }
 
