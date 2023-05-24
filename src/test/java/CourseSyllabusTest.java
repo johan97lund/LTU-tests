@@ -35,9 +35,9 @@ public class CourseSyllabusTest implements TestSetup {
             File downloadedFile = new File("Kursplan_Z0011E.pdf");
             Thread.sleep(2000);
             if (downloadedFile.exists()) {
-                System.out.println("File download failed.");
+                logger.error("File download failed.");
             } else {
-                System.out.println("File has been downloaded successfully.");
+                logger.info("File has been downloaded successfully.");
             }
         } catch (InterruptedException e) {
             System.err.println("Interrupted exception occurred: " + e.getMessage());

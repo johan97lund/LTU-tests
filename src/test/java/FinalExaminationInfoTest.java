@@ -99,9 +99,9 @@ public class FinalExaminationInfoTest implements TestSetup {
 
             assert screenshotFile != null;
             Files.move(screenshotFile.toPath(), new File(destinationPath).toPath(), StandardCopyOption.REPLACE_EXISTING);
-            System.out.println("Screenshot saved successfully at:" + destinationPath);
+            logger.info("Screenshot saved successfully at:" + destinationPath);
         } catch (IOException e) {
-            System.out.println("Failed to save the screenshot:" + e.getMessage());
+            logger.error("Failed to save the screenshot:" + e.getMessage());
         }
     }
 

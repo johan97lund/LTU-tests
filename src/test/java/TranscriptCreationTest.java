@@ -83,9 +83,9 @@ public class TranscriptCreationTest implements TestSetup {
 
             // Compare the parsed date with the expected value
             if (actualDate.equals(expectedDate)) {
-                System.out.println("Transcript created with correct date.");
+                logger.info("Transcript created with correct date.");
             } else {
-                System.out.println("Transcript date does not match the expected value.");
+                logger.error("Transcript date does not match the expected value.");
             }
         } catch (InterruptedException e) {
             System.err.println("InterruptedException occurred: " + e.getMessage());

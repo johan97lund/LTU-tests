@@ -86,9 +86,9 @@ public class TranscriptDownloadTest implements TestSetup {
 
             // Compare the parsed date with the expected value
             if (actualDate.equals(expectedDate)) {
-                System.out.println("Transcript created with correct date.");
+                logger.info("Transcript created with correct date.");
             } else {
-                System.out.println("Transcript date does not match the expected value.");
+                logger.error("Transcript date does not match the expected value.");
             }
 
             // Find and click the element for downloading the transcript
@@ -98,9 +98,9 @@ public class TranscriptDownloadTest implements TestSetup {
             Thread.sleep(2000);
 
             if (downloadedFile.exists()) {
-                System.out.println("File download failed.");
+                logger.error("File download failed.");
             } else {
-                System.out.println("File has been downloaded successfully.");
+                logger.info("File has been downloaded successfully.");
             }
 
             Thread.sleep(1000);
